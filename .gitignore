@@ -30,6 +30,7 @@ backend/target/
 .DS_Store
 Thumbs.db
 *.bak
+push_to_github.bat
 
 # Secrets & Environment variables
 .env
