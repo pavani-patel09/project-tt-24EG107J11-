@@ -29,6 +29,7 @@ backend/target/
 *.sw?
 .DS_Store
 Thumbs.db
+*.bak
 
 # Secrets & Environment variables
 .env
