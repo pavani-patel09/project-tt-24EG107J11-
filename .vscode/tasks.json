@@ -2,9 +2,12 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Start Backend (FastAPI)",
+      "label": "Start Backend (Spring Boot)",
       "type": "shell",
-      "command": "python backend/run_backend.py",
+      "command": ".\\mvnw.cmd spring-boot:run",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
       "isBackground": true,
       "problemMatcher": [],
       "presentation": {
@@ -14,7 +17,7 @@
       }
     },
     {
-      "label": "Start Frontend (Vite)",
+      "label": "Start Frontend (React Vite)",
       "type": "shell",
       "command": "npm.cmd run dev",
       "options": {
@@ -31,8 +34,8 @@
     {
       "label": "Run Full Stack (MediKiosk AI)",
       "dependsOn": [
-        "Start Backend (FastAPI)",
-        "Start Frontend (Vite)"
+        "Start Backend (Spring Boot)",
+        "Start Frontend (React Vite)"
       ],
       "problemMatcher": [],
       "group": {
