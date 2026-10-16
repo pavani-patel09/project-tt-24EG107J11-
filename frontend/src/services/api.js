@@ -1,4 +1,16 @@
-const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+const getBaseUrl = () => {
+  let base = import.meta.env.VITE_API_BASE;
+  if (!base || base.trim() === '') {
+    return '/api';
+  }
+  base = base.trim().replace(/\/+$/, '');
+  if (!base.endsWith('/api')) {
+    base = `${base}/api`;
+  }
+  return base;
+};
+
+const API_BASE = getBaseUrl();
 
 export const getAuthToken = () => localStorage.getItem('medikiosk_token');
 export const setAuthToken = (token) => localStorage.setItem('medikiosk_token', token);
