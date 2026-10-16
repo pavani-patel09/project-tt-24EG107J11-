@@ -172,7 +172,7 @@ public class ClinicalSummaryService {
     }
 
     private SummaryData callGeminiApi(Patient patient, IntakeRecord intake, List<MedicalDocument> documents) {
-        String url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + geminiApiKey;
+        String url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=" + geminiApiKey;
 
         String prompt = "You are a clinical decision support assistant. Return a JSON object with keys: " +
                 "chief_complaint, hpi, past_medical_history, current_medications, allergies, key_findings_from_docs, missing_clinical_info, follow_up_recommendations. " +
@@ -206,7 +206,7 @@ public class ClinicalSummaryService {
                 data.keyFindingsFromDocs = summaryJson.path("key_findings_from_docs").asText();
                 data.missingClinicalInfo = summaryJson.path("missing_clinical_info").asText();
                 data.followUpRecommendations = summaryJson.path("follow_up_recommendations").asText();
-                data.aiModelUsed = "Google Gemini 1.5 Flash";
+                data.aiModelUsed = "Google Gemini 3.5 Flash Lite";
                 return data;
             } catch (Exception e) {
                 System.err.println("JSON parse error from Gemini response: " + e.getMessage());

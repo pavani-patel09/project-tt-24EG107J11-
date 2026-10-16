@@ -22,7 +22,7 @@ echo ========================================================
 echo MediKiosk AI is now running!
 echo - Web App:        http://localhost:5173
 echo - Spring Boot API: http://127.0.0.1:8080/api
-echo - Database:       MySQL (medikiosk_db on localhost:3306)
+echo - Database:       MySQL / Aiven Cloud (configured via .env)
 echo ========================================================
 echo.
 echo Leave this window or the minimized server windows open while using the app.
